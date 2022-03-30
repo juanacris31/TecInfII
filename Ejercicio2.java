@@ -9,7 +9,47 @@ public class Ejercicio2 {
 			System.out.println(); // Imprime salto de línea
 		}
 	}
+	public static void SumaFila(int[][] m) {
+		System.out.println("--------------Suma ultima fila----------");
 
+int suma=0;
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+				if(i==(m.length-1)) {
+					suma=suma+m[i][j];
+					
+				}
+			}
+		}System.out.println("La suma es: "+suma);
+	}
+	public static void sumDiagonal(int[][] m) {
+		System.out.println("--------------Suma Diagonal----------");
+int suma1=0;
+int suma0=0;
+int suma2=0;
+
+for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+				if(i==j) {
+					
+					suma1=suma1+m[i][j];
+					
+					
+				}
+						
+			}
+		}	
+suma0=m[1][0]+m[2][1];
+suma2=m[0][1]+m[1][2];
+
+System.out.println("La suma es: "+suma0);
+System.out.println("La suma es: "+suma1);
+System.out.println("La suma es: "+suma2);
+
+	}
+	
+	 
 	public static void Max(int[][] m) {
 		System.out.println("--------------Numero mayor----------");
 
@@ -47,7 +87,7 @@ public class Ejercicio2 {
 	}
 
 	public static void Par(int[][] m) {
-		System.out.println("--------------Numero mayor----------");
+		System.out.println("--------------Numero par---------");
 		for (int i = 0; i < m.length; i++) {
 			for (int j = 0; j < m[i].length; j++) {
 				if (m[i][j] % 2 == 0) {
@@ -99,6 +139,7 @@ public class Ejercicio2 {
 
 	}
 
+	
 	public static void main(String[] args) {
 
 		int matriz[][] = new int[3][3];
@@ -108,11 +149,14 @@ public class Ejercicio2 {
 			}
 		}
 		Imprimir(matriz);
-		Par(matriz);
+		
+		/*Par(matriz);
 		promedio(matriz);
 		Primo(matriz);
 		Min(matriz);
-		Max(matriz);
+		Max(matriz);*/
+		SumaFila(matriz);
+		sumDiagonal(matriz);
 
 	}
 }
